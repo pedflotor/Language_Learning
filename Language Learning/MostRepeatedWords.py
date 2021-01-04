@@ -14,6 +14,9 @@ url = ["https://www.dw.com/de/12122020-langsam-gesprochene-nachrichten/a-5591468
        "https://www.dw.com/de/28112020-langsam-gesprochene-nachrichten/a-55757361",
        "https://www.dw.com/de/30112020-langsam-gesprochene-nachrichten/a-55768646"]
 
+# Specify the number of words to be shown by the program ordered from the most to the least repeated one
+mrw = 10
+
 # Variables to save the date and text
 date_str_f = []
 texto_pro_f = []
@@ -68,7 +71,7 @@ no_stops = [t for t in tokens if t not in stopwords.words('german')]
 
 # Most repeated words using Counter function
 print('+++++++++++++++++++++++++++++++++++++')
-print(Counter(no_stops).most_common(20))
+print(Counter(no_stops).most_common(mrw))
 print('+++++++++++++++++++++++++++++++++++++')
 
 
@@ -78,8 +81,8 @@ df.columns = ['Text']
 
 # Most repeated words using a custom-made function
 counts = df.Text.value_counts().to_frame().rename(columns={'Text':'Repetitions'})
-print(counts.head(10))
-print(counts.tail(10))
+print(counts.head(mrw))
+print(counts.tail(mrw))
 
 
 # Other functions not used

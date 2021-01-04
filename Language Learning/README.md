@@ -23,10 +23,8 @@ url = ["https://www.dw.com/de/12122020-langsam-gesprochene-nachrichten/a-5591468
 ```
 
 
-Number of words to be shown (20,10,10 by default)
+Number of words to be shown (10 by default)
 
 ```
-print(Counter(no_stops).most_common(20))
-print(counts.head(10))
-print(counts.tail(10))
+mrw = 10
 ```
