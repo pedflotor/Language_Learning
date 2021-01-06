@@ -75,15 +75,22 @@ print(Counter(no_stops).most_common(mrw))
 print('+++++++++++++++++++++++++++++++++++++')
 
 
-# Create a data frame with the Text already processed
-df = pd.DataFrame(no_stops)
-df.columns = ['Text']
+# Custom function to count the repetitions
+def most_repeated(tokenized_text, words_to_show):
+    # Create a data frame with the Text already processed
+    df = pd.DataFrame(tokenized_text)
+    df.columns = ['Text']
 
-# Most repeated words using a custom-made function
-counts = df.Text.value_counts().to_frame().rename(columns={'Text':'Repetitions'})
-print(counts.head(mrw))
-print(counts.tail(mrw))
+    # Most repeated words using a custom-made function
+    counts = df.Text.value_counts().to_frame().rename(columns={'Text':'Repetitions'})
+    print(counts.head(words_to_show))
+    print(counts.tail(words_to_show))
 
+
+most_repeated(no_stops, mrw)
+
+# To do
+# 1. Save all words and counts in a file
 
 # Other functions not used
 # print the title --> print(soup.title.text)
