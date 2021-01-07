@@ -1,7 +1,10 @@
 # Program to count word repetitions from a web text
 
-The program will count the number of times a word appears on several texts from a specific website. 
-This is useful for language learners that wants to study the meaning of common words before reading a text in a foreign language. Then when the texts are read, there is a higher possibility that it will be understood without the necessity of searching for the meaning of not known words
+The program will count the number of times a word appears on several texts from a specific website and will print a 
+number of these words specified by the user. It also saves the list of counted words to a csv file
+
+This is useful for language learners that wants to study the meaning of common words before reading a text in a foreign 
+language. Then when the texts are read, there is a higher possibility that it will be understood without the necessity of searching for the meaning of not known words
 
 ### Prerequisites
 
