@@ -82,15 +82,17 @@ def most_repeated(tokenized_text, words_to_show):
     df.columns = ['Text']
 
     # Most repeated words using a custom-made function
-    counts = df.Text.value_counts().to_frame().rename(columns={'Text':'Repetitions'})
-    print(counts.head(words_to_show))
-    print(counts.tail(words_to_show))
+    df = df.Text.value_counts().rename_axis('Word').reset_index(name='Repetitions')
+
+    print(df.head(words_to_show))
+    print(df.tail(words_to_show))
+    return df
 
 
-most_repeated(no_stops, mrw)
+most_repeated(no_stops, mrw).to_csv('Word_Repetitions')
 
 # To do
-# 1. Save all words and counts in a file
+# 1. Use of the texto_pro data
 
 # Other functions not used
 # print the title --> print(soup.title.text)
